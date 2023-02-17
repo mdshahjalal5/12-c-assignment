@@ -24,27 +24,27 @@ const AddProducts = () => {
                     <label className="label">
                         <span className="label-text font-semibold">User name:</span>
                     </label>
-                    <input name='username' type="text" readOnly defaultValue={user?.userName ? user?.userName : 'Not logged in'} placeholder="password" className="input input-bordered" />
+                    <input name='username' type="text"   placeholder="password" className="input input-bordered" />
                     <label className="label">
                         <span className="label-text font-semibold">User email:</span>
                     </label>
-                    <input name='useremail' defaultValue={user?.email ? user?.email : 'Not logged in'} readOnly type="text" placeholder="password" className="input input-bordered" />
+                    <input name='useremail'   type="text" placeholder="password" className="input input-bordered" />
                     <label className="label">
                         <span className="label-text font-semibold">Product:</span>
                     </label>
-                    <input name='productname' defaultValue={name} readOnly type="text" placeholder="password" className="input input-bordered" />
+                    <input name='productname'  type="text" placeholder="password" className="input input-bordered" />
                     <label className="label">
                         <span className="label-text font-semibold">Price: </span>
                     </label>
-                    <input name='resaleprice' defaultValue={`${resalePrice} tk`} readOnly type="text" placeholder="password" className="input input-bordered" />
+                    <input name='resaleprice'   type="text" placeholder="password" className="input input-bordered" />
                     <label className="label">
                         <span className="label-text font-semibold">Seller Contact:</span>
                     </label>
-                    <input name='contact' defaultValue={contact} readOnly type="text" placeholder="password" className="input input-bordered" />
+                    <input name='contact'  type="text" placeholder="password" className="input input-bordered" />
                     <label className="label">
                         <span className="label-text font-semibold">Meeting location:</span>
                     </label>
-                    <input name='location' defaultValue={location} readOnly type="text" placeholder="password" className="input input-bordered" />
+                    <input name='location'  type="text" placeholder="password" className="input input-bordered" />
                 </div>
             </form>
         </div>

@@ -58,31 +58,7 @@ export const router = createBrowserRouter([
                  {  path:'/myorders', 
                 element:<MyOrders></MyOrders>, 
             },
-            // {
-            //     path: `/service/:id`,
-            //     loader:async  function ({ params }){
-            //         const id = params.id;
-            //           const  fech = await fetch(`https:localhost:6000.vercel.app/service/${id}`)
-            //          const fechData =  await fech.json()
-            //          const {serviceData} = fechData;
-            //         return serviceData; 
-            //     },
-            //     element:<ServiceDetails></ServiceDetails>, 
-            // }, 
-            // {
-         
-            // {
-            //     path:`/update/:id`, 
-            //     element:<UpdateReview></UpdateReview>, 
-            //     loader:async ({params})=>{
-            //         const id = params.id;
-            //         const fetchRes = fetch(`https:localhost:6000.vercel.app/update/${id}`)
-            //         const fetchData = await fetchRes;
-            //         const data = await fetchData.json();
-            //         return data;
-            //     }
-                
-            // }
+           
         ],
     },
 
