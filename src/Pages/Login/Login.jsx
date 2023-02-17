@@ -23,7 +23,8 @@ const Login = () => {
         const userDefine = form.radio.value;
         localStorage.setItem('userDefine', userDefine)
         console.log(userDefine, 'radio')
-        // await login(email, pass);
+        const loginRes = await login(email, pass);
+        console.log(loginRes, 'loginres');
     }
     return (
         <form onSubmit={handleLogin} className="hero min-h-screen bg-base-200 ">
