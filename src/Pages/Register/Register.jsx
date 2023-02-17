@@ -12,16 +12,22 @@ const Register = () => {
         let email, password; 
         email = form.email.value; 
         password = form.password.value;
+         const userDefine = form.radio.value;
+         console.log(userDefine, 'radio')
          const singUpRes = await createUser(email, password)
          if (singUpRes.user?.uid){
-            toast('user successfully register')
+             toast('user successfully register');
+             localStorage.setItem('userDefine', userDefine)
+            
          }
      }
     const hanldeGoogleLogin = async (e) => {
         e.preventDefault();
         const googleRes = await googleSignin()
-        if (googleRes.uid) {
+        console.log(googleRes, 'googleres');
+        if (googleRes.user.uid) {
             toast('User Successfully logged in', { autoClose: 1000 })
+            localStorage.setItem("userDefine", 'buyer')
         }
     }
 
@@ -50,11 +56,15 @@ const Register = () => {
                             </label>
                             <input required name='password' type="password" placeholder="password" className="input input-bordered" />
                             <label className="label">
-                                <Link to="#" className="label-text-alt link link-hover">Forgot password?</Link>
-                            </label>
-                            <label className="label">
                                 <Link to="/login" className="label-text-alt link link-hover">Already have Account?</Link>
                             </label>
+                            <div className="">
+                                <label >
+                                    You are? {' '}
+                                    <input type="radio" name="radio" value={'buyer'} className="radio-sm" defaultChecked /> Buyer
+                                </label>
+                                <input type="radio" name="radio" value={'seller'} className="radio-sm ml-3" /> Seller
+                            </div>
                             <button onClick={hanldeGoogleLogin} className='flex items-center'>
                                 <FaGoogle />
                                 <span className='ml-2'>Sign in by  Google</span>

@@ -8,12 +8,12 @@ const Login = () => {
     UseTittle('Login')
     const { login, googleSignin } = useContext(AuthContext)
     const hanldeGoogleLogin =async (e) =>{
-        localStorage.setItem("userDefine", 'buyer')
         e.preventDefault();
-        // const googleRes = await googleSignin()
-        // if (googleRes.uid){
-            // toast('User Successfully logged in', {autoClose:1000})
-        // }
+        const googleRes = await googleSignin()
+        if (googleRes.user.uid) {
+            toast('User Successfully logged in', { autoClose: 1000 })
+            localStorage.setItem("userDefine", 'buyer')
+        }
     }
     const handleLogin = async (e) =>{
         e.preventDefault();
@@ -24,6 +24,10 @@ const Login = () => {
         localStorage.setItem('userDefine', userDefine)
         console.log(userDefine, 'radio')
         const loginRes = await login(email, pass);
+        if(loginRes?.user){
+            localStorage.setItem("userDefine", userDefine)
+            toast('Successfully logged in')
+        }
         console.log(loginRes, 'loginres');
     }
     return (

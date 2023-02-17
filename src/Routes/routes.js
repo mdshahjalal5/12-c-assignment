@@ -9,7 +9,7 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import Services from "../Pages/Services/Services";
 import ServiceDetails from '../Pages/Services/ServiceDetails'
-import MyReviews from "../Pages/MyOrders/MyOrders";
+import MyOrders from "../Pages/MyOrders/MyOrders";
 import UpdateReview from "../Pages/UpdateReview/UpdateReview";
 import Samsung from "../Pages/Samsung/Samsung";
 import Xiomi from "../Pages/Xiomi/Xiomi";
@@ -55,6 +55,9 @@ export const router = createBrowserRouter([
                 path:'/oppo', 
                 element:<Oppo></Oppo>
             }, 
+                 {  path:'/myorders', 
+                element:<MyOrders></MyOrders>, 
+            },
             // {
             //     path: `/service/:id`,
             //     loader:async  function ({ params }){
@@ -67,9 +70,7 @@ export const router = createBrowserRouter([
             //     element:<ServiceDetails></ServiceDetails>, 
             // }, 
             // {
-            //     path:'/myreviews', 
-            //     element:<MyReviews></MyReviews>, 
-            // },
+         
             // {
             //     path:`/update/:id`, 
             //     element:<UpdateReview></UpdateReview>, 

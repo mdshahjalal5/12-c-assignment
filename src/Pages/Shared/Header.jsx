@@ -12,14 +12,18 @@ const Header = () => {
     }, [user])
     function handleLogout(){
         logOut()
-        .then(toast('successfully logout'))
+        .then(()=>{
+            toast('successfully logout')
+            localStorage.removeItem('userDefine')
+        })
+        
     }
     const buyer = <div>
-        <li><Link to={'/'}>My Orders</Link></li>
+        <li><Link to={'/myorders'}>My Orders</Link></li>
     </div>
     const seller = <>
-        <li><Link to={'/'}>My Products</Link></li>
-        <li><Link to={'/'}>Add a product</Link></li>
+        <li><Link to={'/myproducts'}>My Products</Link></li>
+        <li><Link to={'/addproduct'}>Add a product</Link></li>
     </>
         
     
@@ -32,14 +36,14 @@ const Header = () => {
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li><Link to={'/'}>Home</Link></li>
-                        {userDefine === 'buyer'? buyer:seller}
+                        {(userDefine === 'buyer' && user?.email) ? buyer : ' '}
+                        {(userDefine === 'seller' && user?.email) ? seller : ' '}
                         <li tabIndex={0}>
                             {user?.uid ? '' : <Link to={'login'} className="justify-between">
                                 Login
                             </Link>}
                          
                         </li>
-                                            {user?.email ? <li><Link to={'/myreviews'}>My Reviews </Link></li> :' '}
 
                         <li><Link to={'/blog'}>Blog</Link></li>
                         <li tabIndex={0}>
@@ -55,14 +59,14 @@ const Header = () => {
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     <li><Link to={'/'}>Home</Link></li>
-                    {userDefine === 'buyer' ? buyer : seller}
+                    {(userDefine === 'buyer' && user?.email) ? buyer : ' '}
+                    {(userDefine === 'seller' && user?.email) ? seller : ' '}
                     <li tabIndex={0}>
                         {user?.uid ? ' ' : <Link to={'login'} className="justify-between">
                             Login
                         </Link>}
                   
                     </li>
-                    {user?.email ? <li><Link to={'/myreviews'}>My Reviews </Link></li> :' '}
                     <li><Link to={'/blog'}>Blog</Link></li>
                     <li tabIndex={0}>
                         {user?.uid ? <button onClick={handleLogout}>
@@ -74,7 +78,9 @@ const Header = () => {
             <div className="navbar-end">
                 <div className="avatar">
                     <div className="w-10 rounded-full">
-                        <img title={user?.email || "Not logged in"} src={user?.photoURL ? user.photoURL : 'https://i.ibb.co/m5t2C8t/download.png'} alt='sfs' />
+                        <img title={user?.displayName || user?.email} src={user?.photoURL
+                            ? user.photoURL
+ : 'https://i.ibb.co/m5t2C8t/download.png'} alt='' />
                     </div>
                 </div>
             </div>

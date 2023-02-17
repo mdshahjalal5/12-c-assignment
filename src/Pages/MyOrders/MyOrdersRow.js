@@ -1,20 +1,17 @@
 import React from 'react';
 
-const ReviewsRow = (e) => {
-    const { handlerDelete, handlerUpdate } =  e
+const MyOrdersRow = ({e}) => {
+    const { img,name, resalePrice, description, sellersName } =  e;
+    console.log(e, 'e')
+    console.log(name, description, 'description');
     return (
-        <tr className='mb-2'>
-            <th>
-                <label>
-                    <button onClick={()=>handlerDelete(e?.e)} className='badge badge-ghost badge-sm p-4 '>Delete X</button>
-                </label>
-            </th>
-            <td >
-                <p className='badge badge-ghost badge-sm p-4 font-bold  rounded-md'>{e?.e?.review}</p> 
-            </td>
-            <td><button onClick={() => handlerUpdate(e?.e)} className='font-bold badge badge-ghost badge-sm p-4 '>Update</button></td>
-        </tr>
-    );
+        <div className="card w-96 bg-base-100 shadow-xl image-full">
+            <div className="card-body">
+                <h2 className="card-title">{name} </h2>
+                <p>Price: {resalePrice} tk </p>
+                <p>Seller: {sellersName}  </p>
+            </div>
+        </div> );
 };
 
-export default ReviewsRow;
+export default MyOrdersRow;

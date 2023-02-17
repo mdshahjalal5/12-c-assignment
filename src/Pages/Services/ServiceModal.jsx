@@ -21,6 +21,7 @@ const ServiceModal = ({e}) => {
                 status,
                 category,
                 img,
+                email:user?.email,
             }
             console.log(order,'form')
             fetch(`http://localhost:5000/orders`, {
