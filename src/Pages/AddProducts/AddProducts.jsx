@@ -36,8 +36,9 @@ const AddProducts = () => {
         purchaseDate = form.purchaseDate.value;
         resalePrice = form.resalePrice.value;
         status = 'available';
+        category = form.radio.value;
         let product = {
-            name, condition, contact, description, originalPrice, sellerVerified, purchaseDate, resalePrice, sellersName, status, category, img, email, location
+            category, name, condition, contact, description, originalPrice, sellerVerified, purchaseDate, resalePrice, sellersName, status,  img, email, location
         }
         console.log(product, 'addedprod');
     }
@@ -90,7 +91,15 @@ const AddProducts = () => {
                     </label>
                     <textarea name='description' type="text" placeholder=" Details of the product:"  className="input input-bordered" />
                 </div>
-                <button type='submit'>Submit Product</button>
+                <div className="pt-2">
+                    <label >
+                        <span className='font-semibold'>Select category:</span>  {' '} <br />
+                        <input type="radio" name="radio" value={'samsung'} className="radio-sm" defaultChecked /> Samsung
+                    </label>
+                    <input type="radio" name="radio" value={'XIAOMI'} className="radio-sm ml-3" /> XIAOMI
+                    <input type="radio" name="radio" value={'OPPO'} className="radio-sm ml-3" /> OPPO
+                </div>
+                <button className='btn mt-3' type='submit'>Submit Product</button>
             </form>
         </div>
     );
