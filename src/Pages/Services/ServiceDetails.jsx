@@ -60,7 +60,7 @@ const ServiceDetails = () => {
             <div className='grid lg:grid-cols-3 md:grid-cols-2'>
                 <div data-aos="flip-left" className="card w-96 bg-base-100 shadow-xl">
                     <figure className="px-10 pt-10">
-                        <img src={img} alt="Shoes" className="rounded-xl" />
+                        <img src={img} alt="" className="rounded-xl" />
                     </figure>
                     <div className="card-body items-center text-center">
                         <h2 className="card-title">{name}</h2>

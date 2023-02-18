@@ -12,7 +12,7 @@ const ServiceItem = ({e}) => {
         
             <div data-aos="flip-left" className="card w-96 bg-base-100 shadow-xl">
                 <figure className="px-10 pt-10">
-                    <img src={img} alt="Shoes" className="rounded-xl" />
+                    <img src={img} alt="" className="rounded-xl" />
                 </figure>
                 <div className="card-body items-cente text-cente">
                     <h2 className="card-title">{name}</h2>
