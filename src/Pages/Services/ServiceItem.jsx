@@ -1,11 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import ServiceModal from './ServiceModal';
 
 const ServiceItem = ({e}) => {
     // console.log(e, 'any');
-    const { _id, category, name, condition, contact, description, location, originalPrice, purchaseDate, resalePrice, sellerVerified, sellersName, status
-, img, details } = e;
+    const {   name, condition, description, originalPrice, purchaseDate, resalePrice, sellersName
+, img } = e;
 
     return (
         <>      

@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import UseTittle from '../../utils/UseTittle';
 import ServiceItem from '../Services/ServiceItem';
 
 const Samsung = () => {
+    UseTittle('Samsung ')
     const [services, setServices] = useState([])
     const [loading, setLoading] = useState(false)
-    const  effect = useEffect(function anyName() {
+     useEffect(function anyName() {
         const loader = async () => {
             setLoading(true)
             const fetchRes = await fetch(`http://localhost:5000/products?category=samsung`)
@@ -14,7 +16,7 @@ const Samsung = () => {
             setServices(fetchData)
             
         }
-        const loaderRet = loader();
+         loader();
     }, [])
     return (
         <>

@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import UseTittle from '../../utils/UseTittle';
 import ServiceItem from '../Services/ServiceItem';
 
 const Oppo = () => {
+    UseTittle(' OPPO Gallery ')
     const [services, setServices] = useState([])
     const [loading, setLoading] = useState(false)
-
-    const effect = useEffect(function anyName() {
+    
+     useEffect(function anyName() {
         const loader = async () => {
             const fetchRes = await fetch(`http://localhost:5000/products?category=OPPO`)
             const fetchData = await fetchRes.json();
@@ -13,7 +15,7 @@ const Oppo = () => {
             setLoading(false)
             setServices(fetchData)
         }
-        const loaderRet = loader();
+         loader();
     },[])
     return (
         <>

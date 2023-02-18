@@ -7,7 +7,6 @@ import Blog from "../Pages/Blog/Blog";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
-import Services from "../Pages/Services/Services";
 import MyOrders from "../Pages/MyOrders/MyOrders";
 import Samsung from "../Pages/Samsung/Samsung";
 import Xiomi from "../Pages/Xiomi/Xiomi";

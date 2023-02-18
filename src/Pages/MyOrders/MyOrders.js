@@ -4,7 +4,7 @@ import UseTittle from '../../utils/UseTittle';
 import MyOrdersRow from './MyOrdersRow';
 
 const MyOrders = () => {
-    UseTittle('My Reviews')
+    UseTittle('My Orders')
     const {user} = useContext(AuthContext)
     const [myOrders, setMyOrders] = useState([])
     const [loading, setLoading ] = useState('')

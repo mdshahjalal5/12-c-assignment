@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import ServiceItem from '../Services/ServiceItem';
 import Banner from './Banner';
 import { Link } from 'react-router-dom';
 import UseTittle from '../../utils/UseTittle';

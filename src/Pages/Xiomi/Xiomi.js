@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import UseTittle from '../../utils/UseTittle';
 import ServiceItem from '../Services/ServiceItem';
 
 const Xiomi = () => {
+    UseTittle('Xioami')
     const [services, setServices] = useState([])
     const [loading, setLoading] = useState(false)
-    const effect = useEffect(function anyName(){
+ useEffect(function anyName(){
         const loader = async()=>{
             setLoading('truthy')
             const fetchRes = await fetch(`http://localhost:5000/products?category=XIAOMI`)
@@ -13,7 +15,7 @@ const Xiomi = () => {
             setLoading('')
             setServices(fetchData)
         }
-        const loaderRet = loader();
+         loader();
     }, [])
     return (
         <>
