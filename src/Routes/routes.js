@@ -14,6 +14,7 @@ import Xiomi from "../Pages/Xiomi/Xiomi";
 import Oppo from "../Pages/Oppo/Oppo";
 import AddProducts from "../Pages/AddProducts/AddProducts";
 import MyProducts from "../Pages/MyProducts/MyProducts";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -35,36 +36,33 @@ export const router = createBrowserRouter([
                 path:'/register', 
                 element:<Register></Register>
             }, 
-            {
-                path:'/services', 
-                element:<Services></Services>
-            }, 
+         
             {
                 path:'/blog', 
                 element:<Blog></Blog>
             }, 
             {
                 path:'/samsung', 
-                element:<Samsung></Samsung>
+                element: <PrivateRoute><Samsung></Samsung></PrivateRoute>
             }, 
             {
                 path:'/xiomi', 
-                element:<Xiomi></Xiomi>
+                element: <PrivateRoute><Xiomi></Xiomi></PrivateRoute>
             }, 
             {
                 path:'/oppo', 
-                element:<Oppo></Oppo>
+                element: <PrivateRoute><Oppo></Oppo></PrivateRoute>
             }, 
                  {  path:'/myorders', 
-                element:<MyOrders></MyOrders>, 
+                     element: <PrivateRoute><MyOrders></MyOrders></PrivateRoute>, 
             },
             {
                 path: '/addproduct',
-                element: <AddProducts></AddProducts>
+                element: <PrivateRoute><AddProducts></AddProducts></PrivateRoute>
             }, 
             {
                 path: '/myproducts',
-                element: <MyProducts></MyProducts>
+                element: <PrivateRoute><MyProducts></MyProducts></PrivateRoute>
             }, 
 
         ],

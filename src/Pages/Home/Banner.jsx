@@ -13,13 +13,6 @@ const Banner = () => {
                         <p className="text-xl font-medium text-gray-900 dark:text-white">“A smartphone is an addictive device which traps a soul into a lifeless planet full of lives” <br /> <br />
                             “We are living in a generation where people 'in love' are free to touch each other's private parts but are not allowed to touch each other's phones because they are private.”</p>
                     </blockquote>
-                    <figcaption className="flex items-center justify-center mt-6 space-x-3">
-                        <img className="w-6 h-6 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="profile "/>
-                            <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                                <div className="pr-3 font-medium text-gray-900 dark:text-white">Micheal Gough</div>
-                                <div className="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">CEO at Google</div>
-                            </div>
-                    </figcaption>
                 </figure>
             </div>
         </section>

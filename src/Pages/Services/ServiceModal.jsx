@@ -47,11 +47,11 @@ const ServiceModal = ({e}) => {
                         <label className="label">
                             <span className="label-text font-semibold">User name:</span>
                         </label>
-                        <input name='username' type="text" readOnly defaultValue={user?.userName ? user?.userName : 'Not logged in'} placeholder="password" className="input input-bordered" />
+                        <input name='username' type="text" readOnly defaultValue={(user?.userName && user?.email )? user?.userName : ''} placeholder="password" className="input input-bordered" />
                         <label className="label">
                             <span className="label-text font-semibold">User email:</span>
                         </label>
-                        <input name='useremail' defaultValue={user?.email ? user?.email : 'Not logged in'} readOnly type="text" placeholder="password" className="input input-bordered" />
+                        <input name='useremail' defaultValue={user?.email ? user?.email : ''} readOnly type="text" placeholder="password" className="input input-bordered" />
                         <label className="label">
                             <span className="label-text font-semibold">Product:</span>
                         </label>

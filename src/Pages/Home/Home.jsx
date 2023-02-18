@@ -58,7 +58,6 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <Link to={'/services'}>  <div className="flex justify-center mt-4"><button className="btn btn-active btn-ghost capitalize">See all</button></div></Link>
      </>
     );
 };
