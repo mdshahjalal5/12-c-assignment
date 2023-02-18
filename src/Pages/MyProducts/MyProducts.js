@@ -1,11 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Context/Authprovider';
 import UseTittle from '../../utils/UseTittle';
+import ServiceItem from '../Services/ServiceItem';
+import MyProductItem from './MyProductItem';
 
 const MyProducts = () => {
     UseTittle('My Reviews')
     const { user } = useContext(AuthContext)
-    const [myOrders, setMyOrders] = useState([])
+    const [myProducts, setMyProducts] = useState([])
     const [loading, setLoading] = useState('')
     useEffect(() => {
         async function loader() {
@@ -14,7 +16,7 @@ const MyProducts = () => {
             const fetchData = await fetchRes.json()
             console.log(fetchData, 'fetchData');
             setLoading('')
-            setMyOrders(fetchData);
+            setMyProducts(fetchData);
         }
         if (user?.email) {
             loader()
@@ -22,8 +24,11 @@ const MyProducts = () => {
     }, [user?.email])
 
     return (
-        <div>
-            my products 
+        <div className='grid sm:grid-cols-1 md:grid-cols-3 gap-8'>
+            {myProducts.map((e, i, a) => {
+
+                return <MyProductItem key={i} e={e}></MyProductItem>
+            })}
         </div>
     );
 };
