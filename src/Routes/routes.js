@@ -8,12 +8,11 @@ import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import Services from "../Pages/Services/Services";
-import ServiceDetails from '../Pages/Services/ServiceDetails'
 import MyOrders from "../Pages/MyOrders/MyOrders";
-import UpdateReview from "../Pages/UpdateReview/UpdateReview";
 import Samsung from "../Pages/Samsung/Samsung";
 import Xiomi from "../Pages/Xiomi/Xiomi";
 import Oppo from "../Pages/Oppo/Oppo";
+import AddProducts from "../Pages/AddProducts/AddProducts";
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -58,7 +57,11 @@ export const router = createBrowserRouter([
                  {  path:'/myorders', 
                 element:<MyOrders></MyOrders>, 
             },
-           
+            {
+                path: '/addproduct',
+                element: <AddProducts></AddProducts>
+            }, 
+
         ],
     },
 
