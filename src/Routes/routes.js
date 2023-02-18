@@ -13,6 +13,7 @@ import Samsung from "../Pages/Samsung/Samsung";
 import Xiomi from "../Pages/Xiomi/Xiomi";
 import Oppo from "../Pages/Oppo/Oppo";
 import AddProducts from "../Pages/AddProducts/AddProducts";
+import MyProducts from "../Pages/MyProducts/MyProducts";
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -60,6 +61,10 @@ export const router = createBrowserRouter([
             {
                 path: '/addproduct',
                 element: <AddProducts></AddProducts>
+            }, 
+            {
+                path: '/myproducts',
+                element: <MyProducts></MyProducts>
             }, 
 
         ],

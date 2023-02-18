@@ -32,7 +32,6 @@ const ServiceItem = ({e}) => {
                     </div>
                 </div>
             </div>
-            <h2></h2>
         </>
     );
 };
