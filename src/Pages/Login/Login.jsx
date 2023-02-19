@@ -22,13 +22,11 @@ const Login = () => {
         const pass = form.password.value;
         const userDefine = form.radio.value;
         localStorage.setItem('userDefine', userDefine)
-        console.log(userDefine, 'radio')
         const loginRes = await login(email, pass);
         if(loginRes?.user){
             localStorage.setItem("userDefine", userDefine)
             toast('Successfully logged in')
         }
-        console.log(loginRes, 'loginres');
     }
     return (
         <form onSubmit={handleLogin} className="hero min-h-screen bg-base-200 ">

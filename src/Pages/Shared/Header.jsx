@@ -6,7 +6,6 @@ import { AuthContext } from '../../Context/Authprovider';
 const Header = () => {
     const [userDefine, setUserDefine] = useState('buyer')
     const { logOut, user} = useContext(AuthContext)
-    console.log(userDefine, 'userDefine')
     useEffect(()=>{
         setUserDefine(localStorage.getItem("userDefine"))         
     }, [user])

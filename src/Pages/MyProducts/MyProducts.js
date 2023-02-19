@@ -12,9 +12,8 @@ const MyProducts = () => {
     useEffect(() => {
         async function loader() {
             setLoading('truthy')
-            const fetchRes = await fetch(`http://localhost:5000/products?email=${user?.email}`)
+            const fetchRes = await fetch(`https://12s-assignment.vercel.app/products?email=${user?.email}`)
             const fetchData = await fetchRes.json()
-            console.log(fetchData, 'fetchData');
             setLoading('')
             setMyProducts(fetchData);
         }

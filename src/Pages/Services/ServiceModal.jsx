@@ -23,20 +23,17 @@ const ServiceModal = ({e}) => {
                 img,
                 email:user?.email,
             }
-            console.log(order,'form')
-            fetch(`http://localhost:5000/orders`, {
+            fetch(`https://12s-assignment.vercel.app/orders`, {
                 method: "POST",
                 headers: {
                     'content-type': 'application/json',
                 },
                 body: JSON.stringify(order)
             }).then( async res => {
-                console.log(res, 'booknow res');
                 const data = await res.json()
                 if (data?.acknowledged){
                     toast('Order placed successfully')
                 }
-                console.log(data, );
             })
         }
     return (

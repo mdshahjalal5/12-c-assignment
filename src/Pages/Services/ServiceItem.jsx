@@ -2,7 +2,6 @@ import React from 'react';
 import ServiceModal from './ServiceModal';
 
 const ServiceItem = ({e}) => {
-    // console.log(e, 'any');
     const {   name, condition, description, originalPrice, purchaseDate, resalePrice, sellersName
 , img } = e;
 

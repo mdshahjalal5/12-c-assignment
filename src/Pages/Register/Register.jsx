@@ -13,7 +13,6 @@ const Register = () => {
         email = form.email.value; 
         password = form.password.value;
          const userDefine = form.radio.value;
-         console.log(userDefine, 'radio')
          const singUpRes = await createUser(email, password)
          if (singUpRes.user?.uid){
              toast('user successfully register');
@@ -24,7 +23,6 @@ const Register = () => {
     const hanldeGoogleLogin = async (e) => {
         e.preventDefault();
         const googleRes = await googleSignin()
-        console.log(googleRes, 'googleres');
         if (googleRes.user.uid) {
             toast('User Successfully logged in', { autoClose: 1000 })
             localStorage.setItem("userDefine", 'buyer')

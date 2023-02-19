@@ -14,7 +14,6 @@ const Home = () => {
                 }
             })
             const data = await fech.json();
-            console.log(data, 'data')
             setServices(data)
             return data;
         }

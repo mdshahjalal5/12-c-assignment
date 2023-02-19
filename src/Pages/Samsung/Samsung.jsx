@@ -9,9 +9,8 @@ const Samsung = () => {
      useEffect(function anyName() {
         const loader = async () => {
             setLoading(true)
-            const fetchRes = await fetch(`http://localhost:5000/products?category=samsung`)
+            const fetchRes = await fetch(`https://12s-assignment.vercel.app/products?category=samsung`)
             const fetchData = await fetchRes.json();
-            // console.log(fetchData, 'fetchData');
             setLoading(false)
             setServices(fetchData)
             

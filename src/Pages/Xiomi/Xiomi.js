@@ -9,9 +9,8 @@ const Xiomi = () => {
  useEffect(function anyName(){
         const loader = async()=>{
             setLoading('truthy')
-            const fetchRes = await fetch(`http://localhost:5000/products?category=XIAOMI`)
+            const fetchRes = await fetch(`https://12s-assignment.vercel.app/products?category=XIAOMI`)
             const fetchData = await fetchRes.json();
-            // console.log(fetchData, 'fetchData');
             setLoading('')
             setServices(fetchData)
         }

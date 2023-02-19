@@ -41,20 +41,17 @@ const AddProducts = () => {
         let product = {
             category, name, condition, contact, description, originalPrice, sellerVerified, purchaseDate, resalePrice, sellersName, status,  img, email, location
         }
-        console.log(product, 'addedprod');
-        fetch(`http://localhost:5000/product`, {
+        fetch(`https://12s-assignment.vercel.app/product`, {
             method: "POST",
             headers: {
                 'content-type': 'application/json',
             },
             body: JSON.stringify(product)
         }).then(async res => {
-            console.log(res, 'booknow res');
             const data = await res.json()
             if (data?.acknowledged) {
                 toast('Order placed successfully')
             }
-            console.log(data,);
         })
     }
     return (
