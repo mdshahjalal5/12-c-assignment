@@ -14,10 +14,12 @@ import Oppo from "../Pages/Oppo/Oppo";
 import AddProducts from "../Pages/AddProducts/AddProducts";
 import MyProducts from "../Pages/MyProducts/MyProducts";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 export const router = createBrowserRouter([
     {
         path: "/",
         element:<Main></Main>,
+        errorElement:<ErrorPage></ErrorPage>,
         children: [
             {
                 path: "/",
